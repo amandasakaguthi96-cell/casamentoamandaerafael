@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amanda & Rafael</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --sage:#A8BBA3;
+    --sage-light:#DDE7D8;
+    --cream:#FCFBF8;
+    --beige:#F6F1E9;
+    --gold:#C9B37E;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--cream);
+    font-family:'Montserrat', sans-serif;
+    color:#4d4d4d;
+    line-height:1.8;
+}
+
+.hero{
+    width:100%;
+    height:500px;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h1{
+    font-family:'Playfair Display', serif;
+    font-size:4rem;
+    text-align:center;
+    color:#6d8067;
+}
+
+.subtitle{
+    text-align:center;
+    color:#7f9279;
+    font-size:1.4rem;
+    margin-top:10px;
+    margin-bottom:40px;
+}
+
+.message{
+    text-align:center;
+    max-width:750px;
+    margin:auto;
+    font-size:1.1rem;
+}
+
+.card{
+    background:white;
+    margin-top:50px;
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card h2{
+    text-align:center;
+    color:#6d8067;
+    margin-bottom:30px;
+    font-family:'Playfair Display', serif;
+}
+
+.pix-area{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    justify-content:center;
+    align-items:center;
+}
+
+.qrcode{
+    text-align:center;
+}
+
+.qrcode img{
+    width:280px;
+    border-radius:15px;
+    border:8px solid var(--sage-light);
+}
+
+.pix-copy{
+    flex:1;
+    min-width:300px;
+}
+
+textarea{
+    width:100%;
+    height:140px;
+    padding:15px;
+    border-radius:12px;
+    border:2px solid var(--sage-light);
+    resize:none;
+    font-size:14px;
+}
+
+button{
+    margin-top:15px;
+    background:var(--sage);
+    color:white;
+    border:none;
+    padding:14px 28px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+.footer{
+    text-align:center;
+    margin-top:50px;
+}
+
+.footer h3{
+    font-family:'Playfair Display', serif;
+    color:#6d8067;
+    font-size:2rem;
+}
+
+.thanks{
+    margin-top:15px;
+    color:#7f9279;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.6rem;
+    }
+
+    .hero{
+        height:350px;
+    }
+
+    .card{
+        padding:25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <img src="casal.jpg" alt="Amanda e Rafael">
+</div>
+
+<div class="container">
+
+    <h1>Amanda & Rafael</h1>
+
+    <p class="subtitle">
+        Bem-vindos ao nosso cantinho de presentes
+    </p>
+
+    <div class="message">
+        <p>
+            Sua presença é o nosso maior presente e o que tornará
+            este dia verdadeiramente especial.
+        </p>
+
+        <br>
+
+        <p>
+            Para aqueles que desejarem nos presentear,
+            disponibilizamos abaixo nosso Pix.
+        </p>
+    </div>
+
+    <div class="card">
+
+        <h2>💍 Presente via Pix</h2>
+
+        <div class="pix-area">
+
+            <div class="qrcode">
+                <h3>Escaneie o QR Code</h3>
+                <br>
+                <img src="qrcode.png" alt="QR Code Pix">
+            </div>
+
+            <div class="pix-copy">
+
+                <h3>Pix Copia e Cola</h3>
+
+                <br>
+
+                <textarea id="pix" readonly>00020126650014br.gov.bcb.pix0136c2db955d-bb58-4291-9ac5-3c815cca51450203Pix5204000053039865802BR5925AMANDA_SAKAGUTHI_FIGUEIRE6009ARAGUAINA62130509Casamento6304787C</textarea>
+
+                <button onclick="copiarPix()">
+                    Copiar Pix
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <h3>Com carinho,</h3>
+
+        <h3>Amanda & Rafael</h3>
+
+        <p class="thanks">
+            Obrigada por fazer parte deste momento tão especial ❤️
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+function copiarPix() {
+    const pix = document.getElementById("pix");
+
+    pix.select();
+    pix.setSelectionRange(0, 99999);
+
+    navigator.clipboard.writeText(pix.value);
+
+    alert("Pix copiado com sucesso!");
+}
+</script>
+
+</body>
+</html>
